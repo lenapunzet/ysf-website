@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload-Seite</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .box { margin-bottom: 20px; }
+        label { font-weight: bold; }
+        textarea { width: 100%; height: 100px; }
+        button { padding: 10px 20px; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+<h2>Wähle ein Ziel und lade Fotos/Text hoch</h2>
+
+<div class="box">
+    <label for="ziel">Ziel auswählen:</label><br>
+    <select id="ziel">
+        <option value="ziel1">Ziel 1</option>
+        <option value="ziel2">Ziel 2</option>
+        <option value="ziel3">Ziel 3</option>
+    </select>
+</div>
+
+<div class="box">
+    <label for="fotos">Fotos hochladen:</label><br>
+    <input type="file" id="fotos" accept="image/*" multiple>
+</div>
+
+<div class="box">
+    <label for="text">Kurzer Text:</label><br>
+    <textarea id="text" placeholder="Schreibe etwas..."></textarea>
+</div>
+
+<button onclick="absenden()">Absenden</button>
+
+<script>
+function absenden() {
+    const ziel = document.getElementById('ziel').value;
+    const text = document.getElementById('text').value;
+    const fotos = document.getElementById('fotos').files;
+
+    alert("Daten wurden erfasst!\n\nZiel: " + ziel + "\nText: " + text + "\nFotos: " + fotos.length);
+}
+</script>
+
+</body>
+</html>
